@@ -10,18 +10,20 @@ class LessonsController < ApplicationController
    	@lesson = current_lesson.section.course(lesson_params)
    	if current_user.enrolled_in?
    		redirect_to course_path(@course)
-   end	
-
+   	end	
+   end
 
    def show
+
    end	
    
    private
 
    def require_authorized_for_current_lesson
-   if current_lesson.user != current_user
+   	if current_lesson.user != current_user
       redirect_to course_path, alert: 'You must be enrolled in'	
-    end  
+    end
+   end  
 
   helper_method :current_lesson
   def current_lesson
