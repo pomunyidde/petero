@@ -3,7 +3,7 @@ class Course < ApplicationRecord
 
 
 	belongs_to :user
-	belongs_to :sections
+	has_many :sections
 	has_many :enrollments
 
 	validates :title, presence: true
