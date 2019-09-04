@@ -5,7 +5,9 @@
         var lessonUrl = $( event.target).data('lesson-url');
         $('#newLessonForm').attr('action', lessonUrl);
      });
+   });
 
+  $(function() {  
      $('.lessons').sortable({
       update: function( event, ui ) {
         $.ajax({
@@ -18,7 +20,7 @@
      }); 
   });
 
-
+  $(function() {
    $('.sections').sortable({
       update: function( event, ui ) {
         $.ajax({
@@ -55,7 +57,7 @@
          </div>
 
          <!-- Button trigger modal -->
-         <button type="button" class="btn btn-primary btn-lg float-right new-lesson-buttom" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+         <button type="button" class="btn btn-primary btn-lg float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
           New Lesson...
          </button>
          
