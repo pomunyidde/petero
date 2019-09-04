@@ -18,7 +18,7 @@ class EnrollmentsController < ApplicationController
       description: 'Flixter Premo Content',
       currency: 'usd'
     )
-   end
+  end
 
 
   current_user.enrollments.create(course: current_course)

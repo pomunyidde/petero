@@ -3,7 +3,7 @@
 
      $('.new-lesson-button').click(function( event ) {
         var lessonUrl = $( event.target).data('lesson-url');
-        alert( lessonUrl );
+        $('#newLessonForm').attr('action', lessonUrl);
      });
 
      $('.lessons').sortable({
@@ -126,7 +126,7 @@
         </button>
         <h4 class="modal-title" id="newLessonModalLabel">Add a new lesson</h4>
       </div>
-      <%= simple_form_for @lesson, url: "#", html: {id: 'newLessonForm' } do |f| %>
+      <%= simple_form_for @lesson, url: '#', html: {id: 'newLessonForm' } do |f| %>
       <div class="modal-body">
           <%= f.input :title %>
           <%= f.input :subtitle %>
